@@ -49,9 +49,10 @@ class Song
 
   def self.new_from_filename(song)
     
-    filename_array = song.split(" - ")
-    song_artist =artist.find_or_create_by_name(filename_array[0])
-    song = Song.new(filename_array[1], song_artist)
+    c = self.new 
+    c.name = mp3_formatted_file.split(/[^a-zA-Z\s]|\s-\s/)[1] 
+    c.artist_name = mp3_formatted_file.split(/[^a-zA-Z\s]|\s-\s/)[0]
+    c
   end
   
   def self.create_from_filename(name)
