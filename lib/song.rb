@@ -50,7 +50,7 @@ class Song
   def self.new_from_filename(song)
     
     filename_array = song.split(" - ")
-    song_artist =find_or_create_by_name(filename_array[0])
+    song_artist =Artist.find_or_create_by_name(filename_array[0])
     song = Song.new(filename_array[1], song_artist)
   end
   
