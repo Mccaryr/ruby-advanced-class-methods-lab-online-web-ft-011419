@@ -55,7 +55,7 @@ class Song
     data
   end
   
-  def self.create_from_filename(name)
+  def self.create_from_filename(mp3_formatted_file)
     self.new_from_filename(name)
   end
 
